@@ -1,11 +1,145 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Socials from '../components/Socials.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<span id="terminal">
+		<img src="/assets/terminal-feed.webp" alt="" />
+		<video autoplay muted loop playsinline disablepictureinpicture>
+			<source src="/assets/terminal-cursor.webm" type="video/webm" />
+		</video>
+	</span>
+	<main>
+		<div id="header">
+			<div class="underline-wrapper fade-in">
+				<h1>Flavien Dussud</h1>
+				<svg viewBox="0 0 406.61 16.56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+					<path
+						class="pen-stroke"
+						stroke-width="6"
+						stroke-linejoin="round"
+						d="M4.5,10.26c56.14-1.92,100.35-3.84,156.49-5.76-4.23,1.24-8.01,3.95-10.55,7.56,47.01-2.38,104.66-5.18,170.67-5.56"
+					></path>
+				</svg>
+			</div>
+			<h5 class="fade-in"><i>/fla.vjɛ̃ dy.syd/</i></h5>
+		</div>
+		<div class="fade-in socials">
+			<Socials />
+		</div>
+	</main>
 </Layout>
+
+<style>
+	:global(body) {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
+		overflow: hidden;
+	}
+
+	#terminal {
+		position: fixed;
+		top: 16px;
+		left: 16px;
+	}
+
+	#terminal img {
+		width: 8em;
+	}
+
+	#terminal video {
+		width: 1em;
+	}
+
+	main {
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#header {
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-end;
+		margin: 1rem;
+		padding: 1rem;
+	}
+
+	.underline-wrapper {
+		position: relative;
+		display: inline-block;
+	}
+
+	.underline-wrapper h1 {
+		position: relative;
+		font-weight: 500;
+		margin: 0;
+		z-index: 1;
+	}
+
+	.underline-wrapper svg {
+		position: absolute;
+		left: -0.35em;
+		bottom: 0.1em;
+		height: 0.8em;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	path.pen-stroke {
+		fill: none;
+		stroke: var(--accent);
+		stroke-linecap: round;
+		stroke-dasharray: 400;
+		stroke-dashoffset: 400;
+		transition: stroke-dashoffset 1.2s ease;
+	}
+
+	.underline-wrapper:hover path.pen-stroke {
+		stroke-dashoffset: 0;
+	}
+
+	#header h5 {
+		font-weight: 400;
+		font-size: 1em;
+		margin-top: -0.2em;
+		margin-bottom: 0;
+		color: oklch(from var(--text) calc(l * 0.85) c h);
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.fade-in {
+		opacity: 0;
+		transform: translateY(20px);
+		animation: fadeInUp 0.5s ease-out forwards;
+	}
+
+	.underline-wrapper.fade-in {
+		animation-delay: 0.1s;
+	}
+
+	h5.fade-in {
+		animation-delay: 0.3s;
+	}
+
+	.socials.fade-in {
+		animation-delay: 0.5s;
+	}
+</style>

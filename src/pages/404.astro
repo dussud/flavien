@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 • Flavien Dussud" noindex>
+	<main>
+		<div class="top">
+			<div class="attribution">
+				<h2>Flavien Dussud</h2>
+			</div>
+			<div class="logo">
+				<a href="/" aria-label="Home">
+					<img src="/assets/3d-asterisk.webp" alt="" />
+				</a>
+			</div>
+		</div>
+		<svg
+			id="fill-404"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 473.69 180.45"
+			preserveAspectRatio="none"
+			fill="var(--text)"
+			role="img"
+			aria-label="404"
+		>
+			<path
+				d="M85.45 177.8V134H0v-19.37c.36-.86.93-1.94 1.73-3.17s1.73-2.66 2.79-4.25L77.5 2.66h34.76V112h29.73v22.01h-29.73v43.8h-26.8Zm-58.91-65.81h58.91V50.14c0-4.23.13-8.62.4-13.13.26-4.51.49-8.96.66-13.39h-.53c-1.95 4.23-4.47 8.88-7.56 13.93-3.1 5.03-5.97 9.42-8.63 13.13l-41.4 58.91a10 10 0 0 0-.93 1.06c-.27.37-.57.8-.93 1.34Zm210.17 68.46c-21.06 0-37.55-7.64-49.5-22.96-11.93-15.31-17.9-37.73-17.9-67.27s5.97-51.96 17.9-67.27C199.15 7.64 215.65 0 236.71 0s37.81 7.64 49.76 22.96c11.94 15.31 17.91 37.73 17.91 67.27s-5.97 51.96-17.91 67.27-28.53 22.96-49.76 22.96Zm0-24.14c8.49 0 15.61-2.44 21.36-7.3 5.74-4.86 10.09-12.2 13-22.03 2.93-9.83 4.38-22.07 4.38-36.76s-1.46-26.93-4.38-36.76-7.26-17.15-13-22.03c-5.74-4.86-12.87-7.3-21.36-7.3s-15.61 2.44-21.37 7.3c-5.74 4.88-10.04 12.2-12.86 22.03-2.84 9.83-4.25 22.07-4.25 36.76s1.41 26.93 4.25 36.76c2.82 9.83 7.12 17.17 12.86 22.03 5.76 4.86 12.87 7.3 21.37 7.3m180.45 21.49V134h-85.45v-19.37c.36-.86.93-1.94 1.73-3.17s1.73-2.66 2.79-4.25L409.2 2.66h34.76V112h29.73v22.01h-29.73v43.8h-26.8Zm-58.91-65.81h58.91V50.14c0-4.23.13-8.62.4-13.13.26-4.51.49-8.96.66-13.39h-.53c-1.95 4.23-4.47 8.88-7.56 13.93-3.1 5.03-5.97 9.42-8.63 13.13l-41.4 58.91a10 10 0 0 0-.93 1.06c-.27.37-.57.8-.93 1.34Z"
+			></path>
+		</svg>
+	</main>
+</Layout>
+
+<style>
+	:global(body) {
+		box-sizing: border-box;
+		width: 100vw;
+		height: 100dvh;
+		padding: 16px;
+		overflow: hidden;
+	}
+
+	main {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#fill-404 {
+		flex: 9;
+		width: 100%;
+	}
+
+	.top {
+		width: 100%;
+		height: 10%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.attribution {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: center;
+	}
+
+	.attribution h2 {
+		font-size: clamp(2rem, 1.5rem + 2.5vw, 4.5rem);
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	img {
+		width: 72px;
+	}
+</style>
